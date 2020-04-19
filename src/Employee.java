@@ -1,3 +1,5 @@
+import java.sql.SQLOutput;
+
 /**
  * Employee.java - Employee Benefits Management
  * @author Kimberly Bryant and Andrew Hepworth
@@ -100,7 +102,11 @@ public class Employee {
      * Returns a generic employee motto
      * @return A value of data type String
      */
-    public String motto(){
+    public String motto() {
         return "We value our employees";
+    }
+    public static void main(String[] args) {
+        Employee e1 = new Employee("Test", 75000.0, 1, 1);
+        System.out.printf(e1.toString());
     }
 }
