@@ -10,14 +10,16 @@ public class Employee {
     private double baseSalary;
     private int yearsOfExperience;
     private int yearsAtCompany;
+    private int weeksVacation;
     /**
      * Parameterless constructor
      */
     public Employee(){
         name = "";
-        baseSalary = 0.0;
+        baseSalary = 75000.0;
         yearsOfExperience = 0;
         yearsAtCompany = 0;
+        weeksVacation = 0;
     }
 
     /**
@@ -26,12 +28,14 @@ public class Employee {
      *@param baseSalary A variable of type double
      *@param yearsOfExperience A variable of type int
      *@param yearsAtCompany A variable of type int
+     *@param weeksVacation A variable of type int
      */
-    public Employee(String name, double baseSalary, int yearsOfExperience, int yearsAtCompany){
+    public Employee(String name, double baseSalary, int yearsOfExperience, int yearsAtCompany, int weeksVacation){
         this.name = name;
         this.baseSalary = baseSalary;
         this.yearsOfExperience = yearsOfExperience;
         this.yearsAtCompany = yearsAtCompany;
+        this.weeksVacation = weeksVacation;
     }
     /**
      * Get the name of the employee.
@@ -89,14 +93,26 @@ public class Employee {
     public void setYearsAtCompany(int yearsAtCompany) {
         this.yearsAtCompany = yearsAtCompany;
     }
-
-
+    /**
+     * Set the weeks of vacation time of the employee.
+     * @param weeksVacation of type int.
+     */
+    public void setWeeksVacation(int weeksVacation) {
+        this.weeksVacation = weeksVacation;
+    }
+    /**
+     * Set the years at the company of the employee.
+     * @return int.
+     */
+    public int getWeeksVacation() {
+        return weeksVacation;
+    }
     /**
      * Returns the employees name, salary and motto
      * @return A value of data type String
      */
     public String toString(){
-        return "Name: " + name + "%nSalary: " + baseSalary + "%nMoto: " + motto();
+        return "Name: " + name + "%nSalary: " + baseSalary + "%nMoto: " + motto() + "%nVacation days: " + weeksVacation * 7 + "%n";
     }
     /**
      * Returns a generic employee motto
@@ -106,7 +122,9 @@ public class Employee {
         return "We value our employees";
     }
     public static void main(String[] args) {
-        Employee e1 = new Employee("Test", 75000.0, 1, 1);
+        Employee e1 = new Employee("Josh", 75000.0, 1, 1, 1);
+        Employee e2 = new TechnicalWriter("Anna", 1 , 2);
         System.out.printf(e1.toString());
+        System.out.printf(e2.toString());
     }
 }
