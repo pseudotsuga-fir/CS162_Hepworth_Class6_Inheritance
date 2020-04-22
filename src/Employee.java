@@ -108,7 +108,7 @@ public class Employee {
         return weeksVacation;
     }
     /**
-     * Returns the employees name, salary and motto
+     * Returns the employees name, salary, motto, and amount of vacation days
      * @return A value of data type String
      */
     public String toString(){
@@ -124,7 +124,11 @@ public class Employee {
     public static void main(String[] args) {
         Employee e1 = new Employee("Josh", 75000.0, 1, 1, 1);
         Employee e2 = new TechnicalWriter("Anna", 1 , 2);
+        Engineer e3 = new Engineer("Gertrude", 6, 3);
+        ProjectManager e4 = new ProjectManager("Nancy", 2, 2);
         System.out.printf(e1.toString());
         System.out.printf(e2.toString());
+        System.out.printf(e3.toString());
+        System.out.printf(e4.toString());
     }
 }
